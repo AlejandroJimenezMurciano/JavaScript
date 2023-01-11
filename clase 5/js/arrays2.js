@@ -37,8 +37,9 @@ const newArray = (array2, letter) => {
     }else{
         console.log()
     }
-}
+};
 newArray (['mesa', 'mapa', 'casa','m'])
+
 
 //Añade a la función anterior que el filtro funcione independientemente de mayusculas o minúsculas.
 
