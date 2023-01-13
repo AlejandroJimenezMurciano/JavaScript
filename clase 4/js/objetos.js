@@ -1,4 +1,6 @@
 //Copia el objeto teacher de los apuntes e imprime en distintos console.log cada uno de los datos.
+//para sacar usar el parametro del objeto hay q meterlo entre [] en el sonsole.log
+//siempre que se quiera acceder a  laspropiedades de un objeto a traves de parametros se usan [].
 
 const teacher = {
     info: {
@@ -26,7 +28,8 @@ const teacher = {
 
 console.log(teacher.info.name);
 console.log(teacher.info.age);
-console.log(teacher.info.courses.title);
+console.log(teacher.info.courses[0]);
+console.log(teacher.info.courses[1]);
 console.log(teacher.portfolio.experience);
 console.log(teacher.portfolio.technologies);
 
@@ -35,8 +38,6 @@ console.log(teacher.portfolio.technologies);
 
 //Nota: la notación ```javascript, sólo sirve para que este archivo mantenga el formato, ignorad esa línea.
 
-/*
-```javascript
 const data = {
   numbers: [10, 32, 31, 67, 9, 2, 51, 4],
   data2: {
@@ -55,5 +56,4 @@ const data = {
     onlyOdd: []
   }
 };
-```
-*/
+
