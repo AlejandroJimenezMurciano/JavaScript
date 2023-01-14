@@ -1,5 +1,6 @@
 //Bucles Determinados
-
+console.log(`BUCLES DETERMINADOS - Alejandro Jimenez Murciano`)
+console.log(`Ejercicio 1: Crea una función que reciba un número, la función debe imprimir una cuenta atrás desde ese número hasta 0.`)
 //Crea una función que reciba un número, la función debe imprimir una cuenta atrás desde ese número hasta 0.
 
 const count = number => {
@@ -7,8 +8,9 @@ const count = number => {
         console.log(index)
     }
 }
-count(5);
+count(7);
 
+console.log(`Ejercicio 2: Crea una función que reciba un array de 10 números e imprima por consola la suma de todos los valores del array.`)
 //Crea una función que reciba un array de 10 números e imprima por consola la suma de todos los valores del array.
 
 const sumArray = array => {
@@ -20,6 +22,7 @@ const sumArray = array => {
 }
 sumArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 
+console.log(`Ejercicio 3: Crea una función que reciba un número e imprima por consola la tabla de multiplicar del número que ha recibido hasta el 10.`)
 //Crea una función que reciba un número e imprima por consola la tabla de multiplicar del número que ha recibido hasta el 10. Para el 4 el resultado debe ser:
 
 //4 x 0 = 0
@@ -34,6 +37,7 @@ sumArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 //4 x 9 = 36
 //4 x 10 = 40
 
+
 const multiplicator = number => {
     for (let index = 0; index <= 10; index ++){
         console.log(`${number} x ${index} = ${number * index}`)
@@ -41,7 +45,7 @@ const multiplicator = number => {
 }
 multiplicator(4)
 
-
+console.log(`Ejercicio 4: Crea la función inversa para que la tabla de multiplicar salga en orden inverso.`)
 //Crea la función inversa para que la tabla de multiplicar salga en orden inverso. Para el 4 el resultado debe ser:
 
 //4 x 10 = 40
@@ -63,6 +67,8 @@ const multiplicator2 = number => {
 }
 multiplicator2(5)
 
+
+console.log(`Ejercicio 5: Crea una función que reciba un año y tu edad.`)
 //Crea una función que reciba un año y tu edad, la función debe imprimir:
 
 //"naciste en el año X"
@@ -84,6 +90,7 @@ const life = (year, age) => {
 } 
 life(2023, 23)  
 
+console.log(`Ejercicio 6: Crea una función que reciba dos números e imprima todos los números pares desde el primero hasta el segundo.`)
 //Crea una función que reciba dos números e imprima todos los números pares desde el primero hasta el segundo. Si recibe 2 y 12 imprimirá 2, 4, 6, 8, 10, 12.
 
 const evenNumber = (number1, number2) => {
@@ -92,6 +99,7 @@ const evenNumber = (number1, number2) => {
 }
 evenNumber(1,20)
 
+console.log(`Ejercicio 7: Crea una función que reciba dos números e imprima todos los números pares desde el primero hasta el segundo.`)
 //Crea una función que genere 2 arrays y los rellene con 5 números aleatorios cada uno, la función debe decir qué valores se han repetido en los dos arrays.
 
 const newArrays = () => {
@@ -114,11 +122,36 @@ newArrays()
 
 //Crea una función que reciba un número y te diga si es primo o no.
 
+const primeNumberCheck = number =>{
+    for(let index = number - 1; index > 1; index --){
+        if((number % index) === 0) return `El número ${number} no es primo`
+    }
+    return `El número ${number} es primo`
+}
+console.log(primeNumberCheck(12))
+
+
 //Crea una función que reciba un array de 10 números, imprime por consola cada número, su cuadrado y su cubo en este formato:
 //"Número: 2 - Cuadrado: 4 - Cubo: 8".
 //Nota: Dentro del objeto Math existe el método pow. Math.pow(número, exponente)
+const count2 = number => {
+    console.log(`Número: ${number} - Cuadrado: ${Math.pow(number, 2)} - Cubo: ${Math.pow(number, 3)}`)
+}
+count2(7);
 
 // Crea una función que reciba una palabra e imprima por consola esa palabra pero con las vocales en mayúscula.
+
+const vocalMayus = word => {
+    const vowels = ['a', 'e', 'i', 'o', 'u', 'á', 'é', 'í', 'ó', 'ú']
+    let newWord =''
+    for (const letter of word) {
+        if (vowels.includes(letter)) { newWord += letter.toUpperCase()}
+        else {newWord += letter}
+    }
+    console.log(newWord)
+}
+vocalMayus('alejandro')
+
 
 // Crea una función que reciba una frase e imprim el número de veces que se repite cada vocal
 
