@@ -155,9 +155,52 @@ vocalMayus('alejandro')
 
 // Crea una función que reciba una frase e imprim el número de veces que se repite cada vocal
 
+const numVowels = sentence => {
+    let aCounter = 0;
+    let eCounter = 0;
+    let iCounter = 0;
+    let oCounter = 0;
+    let uCounter = 0;
+  
+    for (const letter of sentence) {
+      if (letter === 'a' || letter === 'á') aCounter++;
+      if (letter === 'e' || letter === 'é') eCounter++;
+      if (letter === 'i' || letter === 'í') iCounter++;
+      if (letter === 'o' || letter === 'ó') oCounter++;
+      if (letter === 'u' || letter === 'ú' || letter === 'ü') uCounter++;
+}
+  
+console.log(
+      `La A se repite ${aCounter} veces. La E se repite ${eCounter} veces. La I se repite ${iCounter} veces. La O se repite ${oCounter} veces. La U se repite ${uCounter} veces.`
+    );
+};
+  
+numVowels('sobreesdrújula');
+
 // Crea una función que reciba dos palabras e intercale las letras de cada una para formar una nueva palabra. Si la función recibe (hola, adios) el resultado será "haodliao", pero si recibe (adios, hola) el resultado será "ahdoiloa"
 
+const intercalate = (word1, word2) => {
+    let newWord = '';
+    for (let index = 0; index < Math.min(word1.length, word2.length); index++) {
+      newWord += word1.charAt(index);
+      newWord += word2.charAt(index);
+    }
+    return newWord;
+};
+  
+console.log(intercalate('hola', 'adiós'));
+
 // Crea una función que reciba una palabra e imprima la misma palabra en orden inverso conservando las mayúsculas y las minúsculas. Si recibe "Elefante" deberá imprimir "etnafelE"
+
+const reverse = word => {
+    let newWord = '';
+    for (let index = 0; index <= word.length; index++) {
+      newWord += word.charAt(word.length - index);
+    }
+    return newWord;
+};
+  
+console.log(reverse('Elefante'));
 
 //Crea una función que reciba un número entero e imprima un lista de números impares como ésta:
 //Si recibe un 6 imprimirá esta lista.
@@ -167,3 +210,26 @@ vocalMayus('alejandro')
 //7 5 3 1
 //9 7 5 3 1
 //11 9 7 5 3 1
+
+const oddNumbers = number => {
+    let newString = '';
+    for (let index = 1; index <= number; index++) {
+      newString += index * 2 - 1 + ' ';
+      console.log(newString);
+    }
+    return newString;
+};
+  
+oddNumbers(6);
+
+const oddNumbersReverse = number => {
+    let prevString = '';
+    let newString = '';
+    for (let index = 1; index <= number; index++) {
+      newString = index * 2 - 1 + ' ';
+      console.log(newString + prevString);
+      prevString = newString + prevString;
+    }
+};
+  
+oddNumbersReverse(6);
